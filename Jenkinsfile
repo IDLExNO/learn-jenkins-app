@@ -91,8 +91,8 @@ pipeline {
                     node_modules/.bin/netlify status
                     node_modules/.bin/netlify deploy --dir=build --no-build
                     timeout(time: 1, unit: 'MINUTES') {
-                           input message: 'should we push to prod', ok: 'yes,we need to'
-                        }
+                        input message: 'should we push to prod', ok: 'yes,we need to'
+                    }    
                     
                 '''
             }
