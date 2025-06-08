@@ -87,8 +87,7 @@ pipeline {
             }
             steps{
                 sh '''
-                npm ci
-                npm install netlify-cli --save-dev
+                npm install netlify-cli/21.6.0 
                 node_modules/.bin/netlify --version 
                 node_modules/.bin/netlify status 
                 node_modules/.bin/netlify deploy --dir=build --prod
