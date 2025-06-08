@@ -89,12 +89,12 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --dir=build --no-build
-                    timeout(time: 1, unit: 'MINUTES') {
-                        input message: 'should we push to prod', ok: 'yes,we need to'
-                    }    
+                    node_modules/.bin/netlify deploy --dir=build --no-build'''
+                timeout(time: 1, unit: 'MINUTES') {
+                    input message: 'should we push to prod', ok: 'yes,we need to'
+                }    
                     
-                '''
+                
             }
         }
         stage('prod-Deploy') {
